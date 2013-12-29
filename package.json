@@ -1,0 +1,17 @@
+{
+  "name": "strider-docker-shim",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Shim running on the container for interactive testing.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BrowserSwarm/strider-docker-shim.git"
+  },
+  "author": "BrowserSwarm",
+  "bugs": {
+    "url": "https://github.com/BrowserSwarm/strider-docker-shim/issues"
+  },
+  "dependencies": {
+    "duplex-emitter": "~2.1.2"
+  }
+}
