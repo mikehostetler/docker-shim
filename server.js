@@ -17,12 +17,11 @@ var Server = function(port) {
     self.remote.on('spawn', onSpawn.bind(self));
 
     socket.once('end', function() {
-      console.log('worker disconnected');
+      console.log('Worker disconnected');
     });
 
     socket.on('error', function(err) {
       console.error(err.stack);
-      onEnd();
     });
   }
 
@@ -38,7 +37,7 @@ Server.prototype.start = function() {
 
 function onSpawn(command, args, options) {
   var self = this;
-  console.log('Spawning command: %j ARGS: %j, OPTIONS: %j'.yellow, command, args, options);
+  //console.log('Spawning command: %j ARGS: %j, OPTIONS: %j'.yellow, command, args, options);
 
   var child = spawn(command, args, options);
 
@@ -54,8 +53,8 @@ function onSpawn(command, args, options) {
 
   child.once('close', function(code) {
     self.remote.emit('close', code);
-    self.socket.end();
-    self.server.close();
+    //self.socket.end();
+    //self.server.close();
   });
 
   child.on('error', function(buf) {
